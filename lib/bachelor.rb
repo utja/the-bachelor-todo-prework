@@ -1,7 +1,10 @@
+require 'pry'
+
 def get_first_name_of_season_winner(data, season)
   data.each do |json_season, contestants|
     if json_season == season
       contestants.collect do |contestant|
+        binding.pry
         if contestant["status"] == "Winner"
           contestant["name"]
         end
